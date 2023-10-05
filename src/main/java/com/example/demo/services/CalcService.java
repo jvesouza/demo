@@ -1,5 +1,8 @@
 package com.example.demo.services;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CalcService {
     public int calc(String operand, int a, int b) {
         int result = 0;
