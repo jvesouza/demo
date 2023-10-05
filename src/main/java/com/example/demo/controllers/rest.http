@@ -1,0 +1,2 @@
+GET http://localhost:8080/calc?a=1&b=2&operand=add
+
