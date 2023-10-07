@@ -11,34 +11,34 @@ import org.mockito.junit.jupiter.MockitoExtension;
 @ExtendWith(MockitoExtension.class)
 public class CalcServiceTest {
     @InjectMocks
-    private CalcService calcService;
+    private CalcService service;
 
     @Test
     public void testCalcAdd() {
-        int result = calcService.calc("add", 1, 2);
+        int result = service.calc("add", 1, 2);
         assertEquals(3, result);
     }
 
     @Test
     public void testCalcSub() {
-        int result = calcService.calc("sub", 1, 2);
+        int result = service.calc("sub", 1, 2);
         assertEquals(-1, result);
     }
 
     @Test
     public void testCalcMul() {
-        int result = calcService.calc("mul", 1, 2);
+        int result = service.calc("mul", 1, 2);
         assertEquals(2, result);
     }
 
     @Test
     public void testCalcDiv() {
-        int result = calcService.calc("div", 1, 2);
+        int result = service.calc("div", 1, 2);
         assertEquals(0, result);
     }
 
     @Test
     public void testCalcInvalidOperand() {
-        assertThrowsExactly(IllegalArgumentException.class, () -> calcService.calc("invalid", 1, 2));
+        assertThrowsExactly(IllegalArgumentException.class, () -> service.calc("invalid", 1, 2));
     }
 }
