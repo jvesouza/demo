@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrowsExactly;
 
 import org.junit.jupiter.api.Test;
@@ -15,29 +16,29 @@ public class CalcServiceTest {
     @Test
     public void testCalcAdd() {
         int result = calcService.calc("add", 1, 2);
-        assert result == 3;
+        assertEquals(3, result);
     }
 
     @Test
     public void testCalcSub() {
         int result = calcService.calc("sub", 1, 2);
-        assert result == -1;
+        assertEquals(-1, result);
     }
 
     @Test
     public void testCalcMul() {
         int result = calcService.calc("mul", 1, 2);
-        assert result == 2;
+        assertEquals(2, result);
     }
 
     @Test
     public void testCalcDiv() {
         int result = calcService.calc("div", 1, 2);
-        assert result == 0;
+        assertEquals(0, result);
     }
 
     @Test
     public void testCalcInvalidOperand() {
         assertThrowsExactly(IllegalArgumentException.class, () -> calcService.calc("invalid", 1, 2));
-}       
+    }
 }
