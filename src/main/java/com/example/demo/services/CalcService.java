@@ -4,20 +4,22 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalcService {
+    private XcalcService xcalcService;
+
     public int calc(String operand, int a, int b) {
         int result = 0;
         switch (operand) {
             case "add":
-                result = a + b;
+                result = xcalcService.add(a, b);
                 break;
             case "sub":
-                result = a - b;
+                result = xcalcService.sub(a, b);
                 break;
             case "mul":
-                result = a * b;
+                result = xcalcService.mul(a, b);
                 break;
             case "div":
-                result = a / b;
+                result = xcalcService.div(a, b);
                 break;
             default:
                 throw new IllegalArgumentException("Invalid operand: " + operand);
