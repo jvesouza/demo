@@ -1,10 +1,12 @@
 package com.example.demo.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CalcService {
-    private XcalcService xcalcService;
+@Autowired
+private XcalcService xcalcService;
 
     public int calc(String operand, int a, int b) {
         int result = 0;
